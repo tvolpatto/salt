@@ -1,0 +1,29 @@
+{
+  "name": "salt",
+  "version": "1.0.0",
+  "description": "Schedule platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint **/*.js --quiet",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvolpatto/salt..git"
+  },
+  "keywords": [
+    "schedule",
+    "salt"
+  ],
+  "author": "Thyago V., Matthew G., Spencer B., Weston M.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tvolpatto/salt./issues"
+  },
+  "homepage": "https://github.com/tvolpatto/salt.#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
