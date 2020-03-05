@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint --ext .jsx --ext .js **/*",
+    "lint": "eslint . -c .eslintrc.json --fix --ext .js",
     "test": "npm run lint"
   },
   "repository": {
