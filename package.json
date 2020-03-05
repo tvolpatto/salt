@@ -22,7 +22,11 @@
     "url": "https://github.com/tvolpatto/salt./issues"
   },
   "homepage": "https://github.com/tvolpatto/salt.#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "passport": "^0.4.1"
+  },
   "devDependencies": {
     "eslint": "^6.8.0"
   }
