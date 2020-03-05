@@ -22,7 +22,11 @@
     "url": "https://github.com/tvolpatto/salt./issues"
   },
   "homepage": "https://github.com/tvolpatto/salt.#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.5"
+  },
   "devDependencies": {
     "eslint": "^6.8.0"
   }
