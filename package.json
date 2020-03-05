@@ -24,6 +24,8 @@
   "homepage": "https://github.com/tvolpatto/salt.#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "passport": "^0.4.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.5"
   },
