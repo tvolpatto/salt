@@ -2,7 +2,7 @@ module.exports = {
   development: {
     username: "root",
     password: process.env.MYSQL_PASSWORD,
-    database: "passport_demo",
+    database: "delivery_db",
     host: "127.0.0.1",
     dialect: "mysql",
     operatorsAliases: false
@@ -10,7 +10,7 @@ module.exports = {
   test: {
     username: "root",
     password: process.env.MYSQL_PASSWORD,
-    database: "passport_demo",
+    database: "delivery_db",
     host: "127.0.0.1",
     dialect: "mysql",
     operatorsAliases: false
@@ -18,7 +18,7 @@ module.exports = {
   production: {
     username: "root",
     password: process.env.MYSQL_PASSWORD,
-    database: "passport_demo",
+    database: "delivery_db",
     host: "127.0.0.1",
     dialect: "mysql",
     operatorsAliases: false
