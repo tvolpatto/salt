@@ -11,8 +11,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     time: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false
+      type:  DataTypes.STRING,
+      allowNull: false
     }
   });
   Schedule.associate = function(models) {
