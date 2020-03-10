@@ -46,4 +46,17 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/api/deliveries", function(req, res) {
+    db.Delivery.findAll({
+      include : [{
+        model: db.User,
+        as: "user",
+        attributes:["id", "name"]
+      }]
+    }).then(function(dbDeliveries) {
+      res.json(dbDeliveries);
+    });
+  });
+
 };
