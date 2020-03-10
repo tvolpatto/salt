@@ -38,7 +38,7 @@ $(document).ready(function() {
       })
         .then(function(data) {
             console.log('registerUser')
-        //   window.location.replace("/members");
+          window.location.replace("/");
         })
         .catch(handleLoginErr);
     }
