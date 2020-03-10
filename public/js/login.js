@@ -32,7 +32,7 @@ $(document).ready(function() {
          console.log("Pinged Database with User info")
         })
         .catch(function(err) {
-          console.log(err);
+          alert('Invalid Login Credentials')
         });
     }
   });
