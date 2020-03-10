@@ -26,6 +26,13 @@ body {
   .col.s6 > .btn {
      width: 100%;
   }
+  .reg_link{
+    padding-left: 160px;
+    font-size: 20px; 
+  }
+  .home_link{
+    margin: auto; 
+  }
   .gender-male,.gender-female {
     display: inline-block;
   }
@@ -54,4 +61,6 @@ body {
     top: -20px;
     right: -20px;
   }
+
+
   

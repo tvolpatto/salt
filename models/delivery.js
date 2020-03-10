@@ -29,6 +29,14 @@ module.exports = function (sequelize, DataTypes) {
     total: {
       type: DataTypes.DOUBLE(10,2),
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()")
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()")
     }
   });
 
