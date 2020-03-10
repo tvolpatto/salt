@@ -6,23 +6,27 @@ module.exports = function (sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    clientName: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    business: {
+    admin: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    address: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     phone: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()")
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()")
     }
   });
 
