@@ -5,6 +5,16 @@ $.get("/api/deliveries", function (data) {
     var gridDataSource = new kendo.data.DataSource({
       data: orderData,
       schema: {
+        parse : function (response) {
+          var orders = [];
+          for (var i = 0; i < response.length; i++) {
+            var user = response[i].user.name;
+            var order = response[i];
+            order.user = user;
+            orders.push(order);
+          }
+          return orders;
+        },
         model: {
           fields: {
             id: { type: "number" },
@@ -14,7 +24,7 @@ $.get("/api/deliveries", function (data) {
             time: { type: "string" },
             quantity: { type: "integer" },
             total: { type: "integer" },
-            user: { type: "string"},
+            user: { template: "string"},
           }
         }
       },
