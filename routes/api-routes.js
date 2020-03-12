@@ -6,9 +6,17 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json(req.user);
-  });
+  app.post("/api/login", function(req, res, next) {
+    passport.authenticate("local", function(error, user, info) {
+    if(error){
+      return res.status(500).json(error)
+    };
+    if(!user){
+      return res.status(401).json(info.message)
+    };
+    res.json(user)
+  })(req, res, next)
+});
 
   // Route for registering a user. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error

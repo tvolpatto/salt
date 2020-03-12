@@ -11,11 +11,16 @@ $(document).ready(function() {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-    console.log(userData);
     if (!userData.email || !userData.password) {
       return;
     }
 
+    function alertLoginError() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+  
     function loginUser(email, password) {
       $.post("/api/login", {
         email: email,
@@ -24,8 +29,8 @@ $(document).ready(function() {
         .then(function() {
           console.log("Pinged Database with User info");
         })
-        .catch(function() {
-          alert("Invalid Login Credentials");
+        .fail(function(err) {
+          alertLoginError()
         });
     }
     // If we have an email and password we run the loginUser function and clear the form
@@ -34,4 +39,5 @@ $(document).ready(function() {
     passwordInput.val("");
   });
 
+  
 });
