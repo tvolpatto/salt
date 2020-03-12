@@ -10,16 +10,28 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    zipCode: {
+      type: DataTypes.STRING(10),
+      allowNull: false
+    },
+    city: {
+      type: DataTypes.STRING(30),
+      allowNull: false
+    },
+    state: {
+      type: DataTypes.STRING(2),
+      allowNull: false
+    },
     phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: false
     },
     date: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: false
     },
     time: {
-      type:  DataTypes.STRING,
+      type:  DataTypes.STRING(10),
       allowNull: false
     },
     quantity: {

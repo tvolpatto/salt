@@ -9,17 +9,17 @@ module.exports = function (sequelize, DataTypes) {
       autoIncrement: true
     },
     name: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
       allowNull: false
     },
     admin: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-    email: DataTypes.STRING,
+    email: DataTypes.STRING(80),
     password: DataTypes.STRING,
     phone: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: false
     },
     createdAt: {
