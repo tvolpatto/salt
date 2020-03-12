@@ -64,8 +64,8 @@ module.exports = function(app) {
   app.post("/api/delivery", function(req, res) {
     let delivery = req.body;
     db.Delivery.create(delivery)
-      .then(function() {
-        res.status(200);
+      .then(function(delivery) {
+        res.status(200).json({id: delivery.id});
       })
       .catch(function(err) {
         res.status(500).json(err);
@@ -80,4 +80,43 @@ module.exports = function(app) {
     });
   });
 
+  app.delete("/api/deliveries/:id", function(req, res) {
+    db.Delivery.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(delivery) {
+      res.json(delivery);
+    });
+  });
+
+  app.put("/api/delivery", function(req, res) {
+    db.Delivery.update({
+      date: req.body.date,
+      time: req.body.time,
+      address: req.body.address,
+      city: req.body.city,
+      state: req.body.state,
+      phone: req.body.phone,
+      quantity: req.body.quantity,
+      total: req.body.total
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(delivery) {
+      res.json(delivery);
+    });
+  });
+
+  app.post("/api/times", function(req, res) {
+    db.Delivery.findAll({
+      attributes:["id", "time"],
+      where:{
+        date: req.body.date
+      }
+    }).then(function(times) {
+      res.json(times);
+    });
+  });
 };
