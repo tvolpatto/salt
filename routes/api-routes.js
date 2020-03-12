@@ -33,7 +33,7 @@ module.exports = function(app) {
     req.logout();
     res.redirect("/");
   });
-  
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
@@ -60,5 +60,24 @@ module.exports = function(app) {
       res.json(dbDeliveries);
     });
   });
-  
+
+  app.post("/api/delivery", function(req, res) {
+    let delivery = req.body;
+    db.Delivery.create(delivery)
+      .then(function() {
+        res.status(200);
+      })
+      .catch(function(err) {
+        res.status(500).json(err);
+      });
+  });
+
+  app.get("/api/deliveries/:userId", function(req, res) {
+    db.Delivery.findAll( {
+      where: { "userId": parseInt(req.params.userId) }}
+    ).then(function(userDeliveries) {
+      res.json(userDeliveries);
+    });
+  });
+
 };
