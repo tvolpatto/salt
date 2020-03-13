@@ -1,4 +1,14 @@
 .schedule-form{
-    margin-top: 50px;
-    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-header{
+    padding-bottom: 18px;
+    padding-top: 15px;
+    color: white;
+}
+
+.submit-btn{
+    margin-top: 20px;
+    margin-left: 40px;
 }

@@ -63,6 +63,7 @@ module.exports = function(app) {
 
   app.post("/api/delivery", function(req, res) {
     let delivery = req.body;
+    console.log(delivery);
     db.Delivery.create(delivery)
       .then(function(delivery) {
         res.status(200).json({id: delivery.id});
