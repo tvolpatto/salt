@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 module.exports = {
   development: {
     username: "root",
@@ -16,11 +17,6 @@ module.exports = {
     operatorsAliases: false
   },
   production: {
-    username: "root",
-    password: process.env.MYSQL_PASSWORD,
-    database: "delivery_db",
-    host: "127.0.0.1",
-    dialect: "mysql",
-    operatorsAliases: false
+    "use_env_variable": process.env.JAWSDB_URL
   }
-}
+};
