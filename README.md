@@ -4,11 +4,11 @@
 
   Our software is designed to aid the company in managing its’ delivery schedule by optimizing their delivery request process. With everything from tables for the company to view upcoming deliveries, to a simple account creation and delivery request for clients, we have simplified their whole process.This Logger application uses MySQL, Node, Express, Handlebars and a homemade ORM.
 
- ![salt](https://github.com/tvolpatto/salt/blob/master/public/screenshots/screenshot.png)
+ ![salt](https://github.com/tvolpatto/salt./blob/master/public/screenshots/screenshot.png)
 
- ![orders](https://github.com/tvolpatto/salt/blob/master/public/screenshots/screenshot1.png)
+ ![orders](https://github.com/tvolpatto/salt./blob/master/public/screenshots/screenshot1.png)
 
- ![admin](https://github.com/tvolpatto/salt/blob/master/public/screenshots/screenshot2.png)
+ ![admin](https://github.com/tvolpatto/salt./blob/master/public/screenshots/screenshot2.png)
 
  ## Running 
 
