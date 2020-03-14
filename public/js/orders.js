@@ -1,5 +1,4 @@
 /* eslint-disable linebreak-style */
-$(".sidenav").sidenav();
 $.get("/api/deliveries", function (data) {
   if (data.length !== 0) {
     var orderData = data;
