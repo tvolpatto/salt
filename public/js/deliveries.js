@@ -91,7 +91,9 @@ $(document).ready(function () {
         difference.forEach(t => timesEl.append($(`<option value="${t}">${t}</option>`)));
         $("select").formSelect();
       });
-    }
+    },
+    minDate: new Date(),
+    disableWeekends: true
   });
 
   //Automatically calculates a total to display to the user when a quantity is entered

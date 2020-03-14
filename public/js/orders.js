@@ -55,12 +55,12 @@ $.get("/api/deliveries", function (data) {
         field: "email",
         title: "Email Address",
         width: 250,
-      }, 
+      },
       {
         field: "deliveryAddress",
         title: "Delivery Address",
         width: 250,
-      }, 
+      },
       {
         field: "phone",
         title: "Contact Phone Number",
