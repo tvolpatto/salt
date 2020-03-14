@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salt</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Source+Code+Pro|Open+Sans+Condensed:300"
+        rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--CSS-->
+    <link type="text/css" rel="stylesheet" href="./css/deliveries.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper black">
+            <div class="container">
+          <a href="#" class="brand-logo">S a l t</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/services">Service</a></li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+
+     <div class="container z-depth-3 schedule-form">
+      <form action="post" id="delForm">
+        <br>
+        <br>
+        <div class="row">
+          <div class="col s12">
+            <div class="input-field">
+              <input placeholder="Full Name" id="fullName" type="text" class="validate">
+              <label for="first_name">Full Name</label>
+            </div>
+          </div>
+
+          <div class="col s4">
+            <div class="input-field">
+              <input placeholder="Delivery address" id="address" type="text" class="validate">
+              <label for="address">Delivery address</label>
+            </div>
+          </div>
+
+          <div class="col s4">
+            <div class="input-field">
+              <input placeholder="Zip code" id="zip" type="text" class="validate">
+              <label for="address">Zip code</label>
+            </div>
+          </div>
+
+          <div class="col s4">
+            <div class="input-field">
+              <input placeholder="State" id="state" type="text" class="validate" data-length="2">
+              <label for="state">State</label>
+            </div>
+          </div>
+
+          <div class="col s6">
+            <div class="input-field">
+              <input placeholder="Phone Number" id="phone" type="text" class="validate">
+              <label for="phone">Phone Number</label>
+            </div>
+          </div>
+
+          <div class="col s6">
+            <div class="input-field">
+              <label for="zip code">Delivery Date</label>
+              <input placeholder="Pick a date" type="text" class="datepicker">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <select id="times">
+              </select>
+              <label>Delivery time</label>
+            </div>
+
+            <div class="col s6">
+              <div class="input-field">
+                <label for="quantity">Select Quantity</label>
+                <input placeholder="Select Quantity" id="quantity" type="text" class="validate">
+              </div>
+            </div>
+
+            <div class="col s4">
+              <div class="input-field">
+                <label for="quantity">Total</label>
+                <input placeholder="Total" disabled id="total" type="text" class="validate">
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </form>
+     </div>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./js/deliveries.js"></script>
+
+</body>
+
+</html>

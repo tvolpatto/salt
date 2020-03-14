@@ -119,7 +119,7 @@ module.exports = function(app) {
 
   app.post("/api/times", function(req, res) {
     db.Delivery.findAll({
-      attributes:["id", "time"],
+      attributes:["time"],
       where:{
         date: req.body.date
       }
