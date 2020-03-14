@@ -110,7 +110,7 @@ $(document).ready(function () {
     $.get("/api/user_data", function (data) {
       if (data.id) {
         $.post("/api/delivery", {
-          address: data.email,
+          address: $("#address").val(),
           zipCode: $("#zip").val(),
           city: $("#city").val(),
           state: $("#state").val(),

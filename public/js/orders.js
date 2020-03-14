@@ -11,8 +11,12 @@ $.get("/api/deliveries", function (data) {
           for (var i = 0; i < response.length; i++) {
             var user = response[i].user.name;
             var order = response[i];
+            var email = response[i].user.email;
             order.user = user;
+            order.email = email;
+            order.deliveryAddress = `${response[i].address}, ${response[i].city}, ${response[i].state}, ${response[i].zipCode}`;
             orders.push(order);
+
           }
           return orders;
         },
@@ -26,6 +30,7 @@ $.get("/api/deliveries", function (data) {
             quantity: { type: "integer" },
             total: { type: "integer" },
             user: { template: "string"},
+            email: { template: "string"},
           }
         }
       },
@@ -42,14 +47,22 @@ $.get("/api/deliveries", function (data) {
       pageable: true,
       sortable: true,
       mobile: true,
+      filterable: true,
       columns: [{
         field: "id",
         title: "Order ID",
         width: 160
       }, {
-        field: "address",
+        field: "email",
+        title: "Email Address",
         width: 250,
-      }, {
+      }, 
+      {
+        field: "deliveryAddress",
+        title: "Delivery Address",
+        width: 250,
+      }, 
+      {
         field: "phone",
         title: "Contact Phone Number",
         width: 160,

@@ -54,7 +54,7 @@ module.exports = function(app) {
       include : [{
         model: db.User,
         as: "user",
-        attributes:["id", "name"]
+        attributes:["id", "name", "email"]
       }]
     }).then(function(dbDeliveries) {
       res.json(dbDeliveries);
@@ -66,6 +66,7 @@ module.exports = function(app) {
       date: req.body.date,
       time: req.body.time,
       address: req.body.address,
+      email: req.body.email,
       zipCode: req.body.zipCode,
       city: req.body.city,
       state: req.body.state,
