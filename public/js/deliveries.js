@@ -120,7 +120,7 @@ $(document).ready(function () {
           userId: data.id
         }).then(function(){
           $("#modal1").modal("open");
-          form.trigger("reset");
+          window.location.replace("/services");
         });
       } else {
         console.log("Not logged in");
