@@ -5,10 +5,12 @@ $(document).ready(function () {
   let quantityEl = $("#quantity");
   let availableTimes = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"];
   let sendDate;
+  let total;
   //datepicker
   $("#modal1").modal();
   $("#modal2").modal();
   $("#modal3").modal();
+  $(".tooltipped").tooltip();
   $("select").formSelect();
   $(".datepicker").datepicker({
     format: "mm/dd/yyyy",
@@ -39,7 +41,7 @@ $(document).ready(function () {
     if (quantityEl.val() <= 0) {
       $("#total").attr("placeholder", "$0");
     } else {
-      let total = (quantityEl.val() * 8) + 10;
+      total = (quantityEl.val() * 8) + 10;
       $("#total").attr("placeholder", "$" + total);
     }
   });
@@ -48,7 +50,7 @@ $(document).ready(function () {
   form.submit(function (e) {
     e.preventDefault();
     $.get("/api/user_data", function (data) {
-      if (data !== {}) {
+      if (data.id) {
         $.post("/api/delivery", {
           address: data.email,
           zipCode: $("#zip").val(),
@@ -56,12 +58,14 @@ $(document).ready(function () {
           state: $("#state").val(),
           phone: $("#phone").val(),
           date: sendDate,
-          time: $("#time").val(),
-          total: $("#total").attr("placeholder"),
+          time: $("#times").val(),
+          quantity: $("#quantity").val(),
+          total: total,
           userId: data.id
         });
       } else {
         console.log("Not logged in");
+        $("#modal2").modal("open");
         return;
       }
     });

@@ -23,6 +23,7 @@
         <a href="#" class="brand-logo">S a l t</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/services">Service</a></li>
+          <li><a href="/logout">Log Out</a></li>
         </ul>
       </div>
     </div>
@@ -36,7 +37,7 @@
         <div class="col s12">
           <div class="input-field">
             <i class="material-icons prefix">account_circle</i>
-            <input placeholder="Full Name" id="fullName" type="text" class="validate" required>
+            <input placeholder="Full Name" id="fullName" type="text" class="validate tooltipped" required data-tooltip="Enter first and last name" data-position="bottom">
             <label for="fullName">Full Name</label>
           </div>
         </div>
@@ -65,7 +66,7 @@
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col s12 m6">
           <div class="input-field">
             <i class="material-icons prefix">add_location</i>
             <input placeholder="State" id="state" type="text" class="validate" data-length="2" required>
@@ -101,8 +102,8 @@
           <div class="col s12 m6 ">
             <div class="input-field">
               <i class="material-icons prefix">view_module</i>
-              <label for="quantity">Select Quantity</label>
-              <input placeholder="Select Quantity" id="quantity" type="text" class="validate" required>
+              <label for="quantity">Enter Quantity</label>
+              <input placeholder="Enter Quantity" id="quantity" type="text" class="validate" required>
             </div>
           </div>
 
@@ -126,6 +127,36 @@
       </div>
   </div>
   </form>
+  </div>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Order has been placed</h4>
+      <p>Thank you for you order!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Please log in to place an order</h4>
+      <p>It appears you are not logged in, please log in to continue</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <h4>Oops!</h4>
+      <p>There seems to have been a problem proccessing your order, please try again</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
   </div>
 
   <!-- Compiled and minified JavaScript -->

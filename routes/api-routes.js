@@ -62,7 +62,18 @@ module.exports = function(app) {
   });
 
   app.post("/api/delivery", function(req, res) {
-    let delivery = req.body;
+    let delivery = {
+      date: req.body.date,
+      time: req.body.time,
+      address: req.body.address,
+      zipCode: req.body.zipCode,
+      city: req.body.city,
+      state: req.body.state,
+      phone: req.body.phone,
+      quantity: parseInt(req.body.quantity),
+      total: parseInt(req.body.total),
+      userId: parseInt(req.body.userId),
+    };
     console.log(delivery);
     db.Delivery.create(delivery)
       .then(function(delivery) {
@@ -96,6 +107,7 @@ module.exports = function(app) {
       date: req.body.date,
       time: req.body.time,
       address: req.body.address,
+      zipCode: req.body.zipCode,
       city: req.body.city,
       state: req.body.state,
       phone: req.body.phone,
