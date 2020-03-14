@@ -23,12 +23,14 @@ $(document).ready(function() {
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
 
-    function handleLoginErr(err) {
-      $("#alert .msg").text(err.responseJSON);
-      $("#alert").fadeIn(500);
+
+    function alertLoginError() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function(){
+        x.className = x.className.replace("show", "");
+      }, 3000);
     }
-
-
     function registerUser(email, password, name, phone) {
       $.post("/api/register", {
         email: email,
@@ -39,7 +41,9 @@ $(document).ready(function() {
         .then(function() {
           window.location.replace("/");
         })
-        .catch(handleLoginErr);
+        .fail(function(){
+          alertLoginError();
+        });
     }
 
 

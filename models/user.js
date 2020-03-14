@@ -16,7 +16,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-    email: DataTypes.STRING(80),
+    email:{
+      type: DataTypes.STRING(80),
+      unique: true
+    },
     password: DataTypes.STRING,
     phone: {
       type: DataTypes.STRING(20),
