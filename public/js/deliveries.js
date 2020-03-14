@@ -118,6 +118,9 @@ $(document).ready(function () {
           quantity: $("#quantity").val(),
           total: total,
           userId: data.id
+        }).then(function(){
+          $("#modal1").modal("open");
+          form.trigger("reset");
         });
       } else {
         console.log("Not logged in");
