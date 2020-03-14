@@ -3,9 +3,65 @@ $(document).ready(function () {
   let form = $("#delForm");
   let timesEl = $("#times");
   let quantityEl = $("#quantity");
+  let stateEl = $("#state");
   let availableTimes = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"];
   let sendDate;
   let total;
+  let states = [
+    "AK",
+    "AL",
+    "AR",
+    "AZ",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "IA",
+    "ID",
+    "IL",
+    "IN",
+    "KS",
+    "KY",
+    "LA",
+    "MA",
+    "MD",
+    "ME",
+    "MI",
+    "MN",
+    "MO",
+    "MS",
+    "MT",
+    "NC",
+    "ND",
+    "NE",
+    "NH",
+    "NJ",
+    "NM",
+    "NV",
+    "NY",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VA",
+    "VT",
+    "WA",
+    "WI",
+    "WV",
+    "WY",
+  ];
+  for (var i=0; i<states.length; i++) {
+    stateEl.append($(`<option value="${states[i]}">${states[i]}</option>`));
+  }
   //datepicker
   $("#modal1").modal();
   $("#modal2").modal();
