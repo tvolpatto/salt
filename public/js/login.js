@@ -27,7 +27,7 @@ $(document).ready(function() {
         password: password
       })
         .then(function() {
-          console.log("Pinged Database with User info");
+          window.location.replace("/deliveries");
         })
         .fail(function(err) {
           alertLoginError()
