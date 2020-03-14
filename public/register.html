@@ -15,7 +15,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        #snackbar {
+        #snackbar, #snackbar2 {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -30,7 +30,7 @@
     bottom: 30px;
     font-size: 17px;
   }
-  #snackbar.show {
+  #snackbar.show, #snackbar2.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -87,8 +87,8 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate" minlength="6" required>
-                        <label for="password">Re-Enter Password</label>
+                        <input id="passwordValidate" type="password" class="validate" minlength="6" required>
+                        <label for="passwordValidate">Re-Enter Password</label>
                     </div>
                 </div>
                 <div class="input-field col s12">
@@ -99,6 +99,8 @@
         </div>
         </form>
         <div id="snackbar">Email already exists.</div>
+        <div id="snackbar2">Passwords must match.</div>
+
     </div>
     </div>
 
