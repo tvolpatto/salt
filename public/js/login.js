@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  $(".sidenav").sidenav();
   // Getting references to our form and inputs
   var loginForm = $("form#reg-form");
   var emailInput = $("input#email");

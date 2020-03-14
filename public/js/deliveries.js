@@ -62,6 +62,8 @@ $(document).ready(function () {
   for (var i=0; i<states.length; i++) {
     stateEl.append($(`<option value="${states[i]}">${states[i]}</option>`));
   }
+
+  $(".sidenav").sidenav();
   //datepicker
   $("#modal1").modal();
   $("#modal2").modal();
