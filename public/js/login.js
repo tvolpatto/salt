@@ -28,8 +28,12 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function() {
-          window.location.replace("/deliveries");
+        .then(function(user) {
+          if (user.admin) {
+            window.location.replace("/admin");
+          } else if (!user.admin) {
+            window.location.replace("/deliveries");
+          }
         })
         .fail(function() {
           alertLoginError();

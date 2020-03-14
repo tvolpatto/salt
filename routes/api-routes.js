@@ -74,7 +74,6 @@ module.exports = function(app) {
       total: parseInt(req.body.total),
       userId: parseInt(req.body.userId),
     };
-    console.log(delivery);
     db.Delivery.create(delivery)
       .then(function(delivery) {
         res.status(200).json({id: delivery.id});
