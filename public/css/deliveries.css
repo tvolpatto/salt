@@ -12,3 +12,8 @@
     margin-top: 20px;
     margin-left: 40px;
 }
+
+body {
+    background-image: url(../assets/nature-forest-trees-fog-4827.jpg);
+    background-color: #cccccc;
+  }
