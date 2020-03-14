@@ -25,28 +25,16 @@ $(document).ready(function() {
 
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-
-    function validatePasswordMatch(pass1, pass2) {
-      if (pass1 !== pass2) {
-        alertPassMatchError();
-        passwordValidateInput.val("");
-        passwordInput.val("");
-      }
-      else if (pass1 === pass2) {
-        registerUser(userData.email, userData.password, userData.name, userData.phone);
-      }
-    }
-
-    function alertLoginError() {
-      var x = document.getElementById("snackbar");
+    function alertPassMatchError() {
+      var x = document.getElementById("snackbar2");
       x.className = "show";
       setTimeout(function(){
         x.className = x.className.replace("show", "");
       }, 3000);
     }
 
-    function alertPassMatchError() {
-      var x = document.getElementById("snackbar2");
+    function alertLoginError() {
+      var x = document.getElementById("snackbar");
       x.className = "show";
       setTimeout(function(){
         x.className = x.className.replace("show", "");
@@ -65,17 +53,24 @@ $(document).ready(function() {
           passwordInput.val("");
           nameInput.val("");
           phoneInput.val("");
-          passwordValidateInput.val("");  
+          passwordValidateInput.val("");
           window.location.replace("/");
         })
         .fail(function(){
           alertLoginError();
-          
         });
     }
 
+    function validatePasswordMatch(pass1, pass2) {
+      if (pass1 !== pass2) {
+        alertPassMatchError();
+        passwordValidateInput.val("");
+        passwordInput.val("");
+      } else if (pass1 === pass2) {
+        registerUser(userData.email, userData.password, userData.name, userData.phone);
+      }
+    }
 
-    // If we have an email and password, run the signUpUser function
     validatePasswordMatch(userData.password, userData.passVal);
   });
 
