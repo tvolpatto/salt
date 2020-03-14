@@ -2,7 +2,8 @@
 var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+var isAuthenticated = require("../config/middleware/isAuthenticated.js");
+var isAuthenticatedAdmin = require("../config/middleware/isAuthenticatedAdmin.js");
 
 module.exports = function(app) {
 
@@ -27,7 +28,7 @@ module.exports = function(app) {
   });
 
 
-  app.get("/admin", function(req, res){
+  app.get("/admin", isAuthenticatedAdmin, function(req, res){
     res.sendFile(path.join(__dirname,"../public/admin.html"));
   });
 

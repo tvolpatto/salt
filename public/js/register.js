@@ -37,7 +37,6 @@ $(document).ready(function() {
         phone: phone,
       })
         .then(function() {
-          console.log("registerUser");
           window.location.replace("/");
         })
         .catch(handleLoginErr);
