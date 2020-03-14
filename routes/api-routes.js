@@ -8,15 +8,15 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post("/api/login", function(req, res, next) {
     passport.authenticate("local", function(error, user, info) {
-    if(error){
-      return res.status(500).json(error)
-    };
-    if(!user){
-      return res.status(401).json(info.message)
-    };
-    res.json(user)
-  })(req, res, next)
-});
+      if(error){
+        return res.status(500).json(error);
+      }
+      if(!user){
+        return res.status(401).json(info.message);
+      }
+      res.json(user);
+    })(req, res, next);
+  });
 
   // Route for registering a user. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error

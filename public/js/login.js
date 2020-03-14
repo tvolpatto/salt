@@ -18,9 +18,11 @@ $(document).ready(function() {
     function alertLoginError() {
       var x = document.getElementById("snackbar");
       x.className = "show";
-      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+      setTimeout(function(){
+        x.className = x.className.replace("show", "");
+      }, 3000);
     }
-  
+
     function loginUser(email, password) {
       $.post("/api/login", {
         email: email,
@@ -29,8 +31,8 @@ $(document).ready(function() {
         .then(function() {
           window.location.replace("/deliveries");
         })
-        .fail(function(err) {
-          alertLoginError()
+        .fail(function() {
+          alertLoginError();
         });
     }
     // If we have an email and password we run the loginUser function and clear the form
@@ -39,5 +41,5 @@ $(document).ready(function() {
     passwordInput.val("");
   });
 
-  
+
 });
